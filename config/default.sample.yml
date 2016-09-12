@@ -1,0 +1,10 @@
+config:
+    base_url: "https://xxxxx.backlog.jp"
+    api_key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    target_projects:
+        PJ_KEY: 'slack_channel'
+        PJ_KEY2: 'slack_channel2'
+    slack_hook:
+        base_url: "https://hooks.slack.com/services/"
+        key_path: "XXXXXXXX/YYYYYYYYY/ZZZZZZZZZZZZZZZZZZZZZZZZ"
+
