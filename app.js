@@ -21,7 +21,7 @@ function push2Slack(ch, msg) {
     },
     json: true,
   };
-  //console.log('push slack **** '+opts.uri);
+  //console.log('push slack **** '+opts.uri+"\n"+msg);
   request.post(opts, function(err, r, body) {
     if (!err && r.statusCode == 200) {
       console.log('pushed');
@@ -100,14 +100,13 @@ function fetchAll(pj_list) {
     if (issues.today.length > 0) {
       msg += "[Today's issues]\n";
       issues.today.forEach(function(is) {
-        msg += "  :bell: ("+is.status+") "+is.name+" : "+conf.issue_url+is.key+"\n";
+        msg += "  :bell: ("+is.status+") "+is.name+" : "+issue_url+is.key+"\n";
       });
     }
     if (issues.pasts.length > 0) {
       msg += "[past issues]\n";
       issues.pasts.forEach(function(is) {
-        msg += "  :boom: ["+is.due+"]("+is.status+") "+is.name +" : "
-            +conf.issue_url+is.key+"\n";
+        msg += "  :boom: ["+is.due+"]("+is.status+") "+is.name +" : "+issue_url+is.key+"\n";
       });
     }
 
